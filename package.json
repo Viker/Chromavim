@@ -11,10 +11,25 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "*"
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration":[
+            {
+                "title": "Chromavim",
+                "properties": {
+                    "extension.vschroma.defaultColor": {
+						"type": "string",
+						"default": "04101a",
+						"pattern": "[A-Fa-f0-9]{6}",
+						"markdownDescription": "**Default color** used to iluminate keyboard",
+						"title": "Default Color"
+					}
+
+                }
+            }
+        ],
         "commands": [
             {
                 "command": "extension.setLightGreen",
