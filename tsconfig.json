@@ -5,20 +5,23 @@
         "outDir": "out",
         "lib": [
             "es2019",
-            "DOM" 
+            "DOM"
         ],
         "sourceMap": true,
         "rootDir": "src",
-        /* Strict Type-Checking Option */
-        "strict": true,   /* enable all strict type-checking options */
-        /* Additional Checks */
-        "noUnusedLocals": true /* Report errors on unused locals. */
-        // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-        // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-        // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+        "strict": true,
+        "noUnusedLocals": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./node_modules/vscode/vscode.d.ts"
+        ],
+        "skipLibCheck": true
     },
     "exclude": [
         "node_modules",
-        ".vscode-test"
+        ".vscode-test",
+        "src/test"
     ]
 }

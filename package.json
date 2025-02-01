@@ -11,18 +11,18 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onStartupFinished"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.setLightGreen",
-                "title": "GreenLight"
+                "command": "extension.vschroma.startAnimation",
+                "title": "Start Chroma Animation"
             },
             {
-                "command": "extension.setLightRed",
-                "title": "RedLight"
+                "command": "extension.vschroma.stopAnimation",
+                "title": "Stop Chroma Animation"
             }
         ]
     },
@@ -30,15 +30,17 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "test": "npm run compile && node ./node_modules/@vscode/test-electron/out/runTest.js"
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
+        "@types/mocha": "^9.1.0",
+        "@types/node": "^16.0.0",
+        "@types/sinon": "^10.0.0",
+        "@types/vscode": "^1.20.0",
+        "@vscode/test-electron": "^2.3.8",
+        "sinon": "^15.0.0",
         "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.36"
+        "typescript": "^4.9.0"
     },
     "dependencies": {
         "node-fetch": "^2.0.0",
